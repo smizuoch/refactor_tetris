@@ -1,5 +1,23 @@
 #include "tetris.h"
 
+char Table[R][C] = {0};
+int final = 0;
+char GameOn = T;
+suseconds_t timer = 400000;
+int decrease = 1000;
+Struct current;
+struct timeval before_now, now;
+
+const Struct StructsArray[7]= {
+	{(char *[]){(char []){0,1,1},(char []){1,1,0}, (char []){0,0,0}}, 3},
+	{(char *[]){(char []){1,1,0},(char []){0,1,1}, (char []){0,0,0}}, 3},
+	{(char *[]){(char []){0,1,0},(char []){1,1,1}, (char []){0,0,0}}, 3},
+	{(char *[]){(char []){0,0,1},(char []){1,1,1}, (char []){0,0,0}}, 3},
+	{(char *[]){(char []){1,0,0},(char []){1,1,1}, (char []){0,0,0}}, 3},
+	{(char *[]){(char []){1,1},(char []){1,1}}, 2},
+	{(char *[]){(char []){0,0,0,0}, (char []){1,1,1,1}, (char []){0,0,0,0}, (char []){0,0,0,0}}, 4}
+};
+
 int main() {
     srand(time(0));
     final = 0;
