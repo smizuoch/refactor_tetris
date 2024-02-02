@@ -1,4 +1,4 @@
-#include "tetris.h"
+#include "../includes/tetris.h"
 
 char Table[R][C] = {0};
 int final = 0;
